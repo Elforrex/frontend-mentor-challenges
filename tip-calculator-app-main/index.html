@@ -192,7 +192,13 @@
           <p>Bill</p>
           <div class="peso">
             <img src="./images/icon-dollar.svg" alt="" />
-            <input type="text" name="" id="" />
+            <!--<input type="text" name="" id="" />-->
+            <input
+              type="text"
+              id="tipInput"
+              placeholder="Ingresa un tip"
+              oninput="actualizarTip()"
+            />
           </div>
           <p class="tip">Select Tip %</p>
           <div class="button-container">
@@ -222,11 +228,24 @@
           <p class="titulo2">
             Total <br />
             <span>/ person</span>
-            <input type="text" class="inputder" placeholder="$" />
+            <input
+              id="tipDisplay"
+              type="text"
+              class="inputder"
+              placeholder="$"
+            />
           </p>
           <button class="reset">RESET</button>
         </div>
       </div>
     </div>
+    <script>
+      function actualizarTip() {
+        var tipInput = document.getElementById("tipInput");
+        var tipText = tipInput.value;
+        var tipDisplay = document.getElementById("tipDisplay");
+        tipDisplay.value = tipText / 10;
+      }
+    </script>
   </body>
 </html>
